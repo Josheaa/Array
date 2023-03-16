@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Penulisan Array JS (Prototype)</title>
+</head>
+
+<body>
+    <script>
+        // Mendeklerasikan Prototype
+        function book(tittle, author) {
+            this.title = tittle;
+            this.author = author;
+        }
+
+        var myBook = new book("Java script", "Montashin");
+        book.prototype.price = null;
+        myBook.price = 100;
+
+        document.writeln(`Book title adalah : ${myBook.title} <br>`);
+        document.writeln(`Book title adalah : ${myBook.author} <br>`);
+        document.writeln(`Book title adalah : ${myBook.price} <br>`);
+    </script>
+</body>
+
+</html>
