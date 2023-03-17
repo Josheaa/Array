@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pengetahuan Array Method</title>
+</head>
+<body>
+    <p>Ini Array Method (Filter) : <p id="demo1"></p> </p>
+    <p>Ini Array Method (forEach) : <p id="demo2"></p> </p>
+    <p>Ini Array Method (Join) : <p id="demo3"></p> </p>
+    <p>Ini Array Method (map) : <p id="demo4"></p> </p>
+    <p>Ini Array Method (pop) : <p id="demo5"></p> </p>
+    <p>Ini Array Method (push) : <p id="demo6"></p> </p>
+    <p>Ini Array Method (sort) : <p id="demo7"></p> </p>
+    <p>Ini Array Method (forIn) : <p id="demo8"></p> </p>
+    <p>Ini Array Method (forOf) : <p id="demo9"></p> </p>
+
+    <script>
+        // Array Method (Filter)
+        // Metode filter() membuat array baru yang diisi dengan elemen yang lulus uji yang disediakan oleh suatu fungsi
+        // Metode filter() tidak menjalankan fungsi untuk elemen yg kosong
+        // Metode filter() tidak mengubah array yg asli
+        const ages = [32, 33, 16, 40];
+
+        document.getElementById("demo1").innerHTML = ages.filter(checkAdult);
+
+        function checkAdult(age) {
+            return age >= 18;
+        }
+
+        // Array Method (forEach)
+        // Metode forEach() memanggil fungsi untuk setiap elemen dalam array
+        // Metode forEach() tidak dijalankan untuk elemen kosong
+        let text = "";
+        const fruits = ["apple", "orange", "cherry"];
+        fruits.forEach(myFunction);
+
+        document.getElementById("demo2").innerHTML = text;
+
+        function myFunction(item, index) {
+            text += index + ": " + item + "<br>";
+        }
+
+        // Array Method (Join)
+        // Metode join() mengembalikan array sebagai string
+        // Metode join() tidak mengubah array asli
+        // Pemisah apa pun dapat ditentukan, Standarnya adalah koma(,)
+        const fruitss = ["Banana", "Orange", "Apple", "Mango"];
+        let texts = fruitss.join(" - ");
+
+        document.getElementById("demo3").innerHTML = texts;
+
+        // Array Method (map)
+        // map() membuat larik baru dari memanggil fungsi untuk setiap elemen larik
+        // map() memanggil fungsi satu kali untuk setiap elemen dalam array
+        // map() tidak menjalankan fungsi untuk elemen kosong
+        // map() tidak mengubah array asli
+        const numbers = [4, 9, 16, 25];
+        document.getElementById("demo4").innerHTML = numbers.map(Math.sqrt);
+
+
+        // Array Method (pop)
+        // Metode pop() menghapus(muncul) elemen terakhir dari sebuah array 
+        // Metode pop() mengubah array asli
+        // Metode pop() mengembalikan elemen yang dihapus
+        const fruitsss = ["Banana", "Orange", "Apple", "Mango"];
+        fruitsss.pop();
+        document.getElementById("demo5").innerHTML = fruitsss;
+
+        // Array Method (push)
+        // The push() method adds new items to the end of an array
+        // The push() method changes the length of the array
+        // The push() method returns the new length
+        const fruitssss = ["Banana", "Orange", "Apple", "Mango"];
+        fruitssss.push("Kiwi");
+
+        document.getElementById("demo6").innerHTML = fruitssss;
+
+        // Array Method (sort)
+        // sort() mengurutkan elemen array
+        // sort() menimpa array asli
+        // sort() mengurutkan elemen sebagai string dalam urutan abjad dan menaik
+        const fruitsssss = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo7").innerHTML = fruitsssss.sort();
+
+        // ------------------------------ DIFFRENT -------------------------------------
+
+        // Array Method (forIn)
+        // forIn adakah perulangan khusus di dalam JavaScript yang digunakan untuk menampilkan 'isi' dari sebuah objek
+        // Objek yang digunakan dapat berupa Array, karena array pada dasarnya juga merupakan objek di dalam JavaScript
+        const person = { fname: "John", lname: "Doe", age: 25 };
+
+            let txt = "";
+            for (let x in person) {
+                txt += person[x] + " ";
+            }
+
+            document.getElementById("demo8").innerHTML = txt;
+
+        // Array Method (forOf)
+        // forOf adalah component penting dalam pemograman yaitu melakukan perulangan
+        // Ini dilakukan agar kita tidak melakukan banyak penulisan code yang sama secara berulang - ulang
+        const cars = ["BMW", "Volvo", "Mini"];
+
+        let textsss = "";
+        for (let x of cars) {
+            textsss += x + "<br>";
+        }
+
+        document.getElementById("demo9").innerHTML = textsss;
+
+    </script>
+</body>
+</html>
